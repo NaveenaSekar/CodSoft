@@ -2,9 +2,9 @@ let display = document.getElementById('display');
 let currentInput = '';
 
 function appendNumber(number) {
-    if (currentInput === '0' && number === '0') return; // Avoid multiple leading zeros
+    if (currentInput === '0' && number === '0') return; 
     if (currentInput === '0' && number !== '.') {
-        currentInput = number; // Replace leading zero
+        currentInput = number; 
     } else {
         currentInput += number;
     }
@@ -12,8 +12,8 @@ function appendNumber(number) {
 }
 
 function appendOperator(operator) {
-    if (currentInput === '' && operator !== '-') return; // Allow '-' as first character
-    if (isNaN(currentInput.slice(-1))) return; // Prevent multiple operators in a row
+    if (currentInput === '' && operator !== '-') return; 
+    if (isNaN(currentInput.slice(-1))) return; 
     currentInput += operator;
     updateDisplay();
 }
